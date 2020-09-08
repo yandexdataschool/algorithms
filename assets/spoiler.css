@@ -1,0 +1,13 @@
+details summary {
+    display: block;
+    width: 10em;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-bottom: 1px dotted;
+    outline-style: none;
+    cursor: pointer;
+}
+    details summary::-webkit-details-marker {  /* нестандартный псевдоэлемент Google Chrome */
+    display: none;
+}

@@ -1,0 +1,10 @@
+[book]
+authors = ["Yandex Data School"]
+language = "ru"
+multilingual = false
+src = "src"
+title = "Курс Алгоритмов ШАД"
+
+[output.html]
+mathjax-support = true
+additional-css = ["assets/spoiler.css"]

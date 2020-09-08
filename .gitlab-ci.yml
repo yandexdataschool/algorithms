@@ -1,33 +1,18 @@
-# requiring the environment of NodeJS 10
-image: node:10
-
-# add 'node_modules' to cache for speeding up builds
-cache:
-  paths:
-    - node_modules/ # Node modules and dependencies
+# requiring the environment of Rust 1.46.0
+image: rust:1.46.0
 
 before_script:
-  - npm install gitbook-cli -g # install gitbook
-  - gitbook fetch 3.2.3 # fetch final stable version
-  - gitbook install # add any requested plugins in book.json
-
-test:
-  stage: test
-  script:
-    - gitbook build . public # build to public path
-  only:
-    - branches # this job will affect every branch except 'master'
-  except:
-    - master
+  - wget -qO- https://github.com/rust-lang/mdBook/releases/download/v0.4.3/mdbook-v0.4.3-x86_64-unknown-linux-gnu.tar.gz | tar -xvz -C /usr/local/bin
+  - chmod 0755 /usr/local/bin/mdbook
     
-# the 'pages' job will deploy and build your site to the 'public' path
+# the 'pages' job will build your site and deploy if on master
 pages:
   stage: deploy
   script:
-    - gitbook build . public # build to public path
+    - ls -lath
+    - mdbook build $([ "$CI_COMMIT_BRANCH" = "master" ] && echo "-d public") # build to public path on master
   artifacts:
     paths:
       - public
-    expire_in: 1 week
-  only:
-    - master # this job will affect only the 'master' branch
+      - book
+    expire_in: 1 day

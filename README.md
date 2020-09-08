@@ -1,3 +1,5 @@
-Тут находится страницы курса алгоритмов yandexdataschool.ru
+Тут находится страницы курса алгоритмов [ШАД](yandexdataschool.ru).
 
-Содержимое находится [здесь](http://ysda.gitlab.io/) 
+Содержимое можно смотреть [здесь](http://ysda.gitlab.io/).
+
+Для сборки страниц используется [mdBook](https://github.com/rust-lang/mdBook).
