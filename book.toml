@@ -8,4 +8,4 @@ title = "Курс Алгоритмов ШАД"
 [output.html]
 additional-css = ["assets/spoiler.css"]
 mathjax-support = true
-repository-url = "https://gitlab.com/ysda/algorithms"
+git-repository-url = "https://gitlab.com/ysda/algorithms"
