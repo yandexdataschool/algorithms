@@ -6,5 +6,6 @@ src = "src"
 title = "Курс Алгоритмов ШАД"
 
 [output.html]
-mathjax-support = true
 additional-css = ["assets/spoiler.css"]
+mathjax-support = true
+repository-url = "https://gitlab.com/ysda/algorithms"
