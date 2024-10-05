@@ -9,14 +9,14 @@
 На сервере компилируется 2 варианта вашего решения, а именно:
 
 ```bash
-g++-8 solution.cpp -std=c++17 -O2 -Wall -Werror -Wsign-compare -o fast_solution
-g++-8 solution.cpp -fsanitize=address,undefined -fno-sanitize-recover=all -std=c++17 -O2 -Wall -Werror -Wsign-compare -o debug_solution
+clang++ --gcc-toolchain=/usr/local/ -Wall -Werror -Wextra -pedantic -O2 -std=c++20 solution.cpp -o fast_solution
+clang++ --gcc-toolchain=/usr/local/ -O2 -std=c++20 -fsanitize=address,undefined solution.cpp -o debug_solution
 ```
 
 Здесь стоит отметить следующее:
 1. `-Wall` и `-Werror`. Первый флаг заставляет компилятор выдавать дополнительные предупреждения, второй &mdash; трактовать любое предупреждение как ошибку компиляции. Таким образом, ваш код не должен давать ни одного предупреждения.
 2. `-O2` включает оптимизации кода.
-3. `-std=c++17` нужен для использования стандарта `C++17`. Если вы не особо обращаете внимание на используемый стандарт, то можете продолжать это делать и писать, как раньше. Остальные могут использовать все фишки нового стандарта.
+3. `-std=c++20` нужен для использования стандарта `C++20`. Если вы не особо обращаете внимание на используемый стандарт, то можете продолжать это делать и писать, как раньше. Остальные могут использовать все фишки нового стандарта.
 
 Во втором случае решение компилируется с включенными *санитайзерами*. Любое обращение за пределы массива, знаковое переполнение целочисленных типов и любые подобные проявления некорректной работы с памятью и undefined behavior будут вызывать ошибку времени выполнения и приводить к вердикту Runtime Error на сервере, а не ситуации, когда ваша программа иногда работает, а иногда нет.
 
@@ -109,7 +109,7 @@ int main() {
 cmake_minimum_required(VERSION 3.12)
 project(my_project)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CXX_FLAGS_ASAN "-g -fsanitize=address,undefined -fno-sanitize-recover=all"
         CACHE STRING "Compiler flags in asan build"
@@ -242,5 +242,5 @@ clang-format -i main.cpp
 
 Для дополнительных проверок на именование переменных, функций и прочего выполните
 ```bash
-clang-tidy main.cpp -- -std=c++17
+clang-tidy main.cpp -- -std=c++20
 ```
