@@ -17,9 +17,8 @@
     * [Access Control](http://google.github.io/styleguide/cppguide.html#Access_Control)
     * [Declaration Order](http://google.github.io/styleguide/cppguide.html#Declaration_Order)
   * Functions
-    * [Parameter Ordering](http://google.github.io/styleguide/cppguide.html#Function_Parameter_Ordering)
+    * [Inputs and Outputs](https://google.github.io/styleguide/cppguide.html#Inputs_and_Outputs) (с оговоркой про выходные параметры примитивных типов в [п. 14](#input_params))
     * [Write Short Functions](http://google.github.io/styleguide/cppguide.html#Write_Short_Functions)
-    * [Reference Arguments](http://google.github.io/styleguide/cppguide.html#Reference_Arguments) (с оговоркой про выходные параметры примитивных типов в [п. 14](#input_params))
   * Other C++ Features
     * [Casting](http://google.github.io/styleguide/cppguide.html#Casting)
     * [Preincrement and Predecrement](http://google.github.io/styleguide/cppguide.html#Preincrement_and_Predecrement)
@@ -28,7 +27,7 @@
     * [Integer Types](http://google.github.io/styleguide/cppguide.html#Integer_Types)
     * [0 and nullptr/NULL](http://google.github.io/styleguide/cppguide.html#0_and_nullptr/NULL)
     * [auto](http://google.github.io/styleguide/cppguide.html#auto)
-    * [Braced Initializer List](http://google.github.io/styleguide/cppguide.html#Braced_Initializer_List)
+    * [Braced Initializer List Format](https://google.github.io/styleguide/cppguide.html#Braced_Initializer_List_Format)
     * [Lambda Expressions](http://google.github.io/styleguide/cppguide.html#Lambda_expressions)
   * [Naming](http://google.github.io/styleguide/cppguide.html#Naming)
   * [Formatting](http://google.github.io/styleguide/cppguide.html#Formatting)
@@ -49,7 +48,7 @@ _**Это самое большое возможное зло**_. Если в п
 На код должно быть приятно смотреть, его должно быть легко читать. Вы его пишете один раз, сохраняете, после чего его читают много раз, поэтому выгодно потратить при написании немного времени на приведение кода в порядок, чтобы впоследствии сократить своё и чужое время на чтение.
 Простые правила ниже служат для улучшения визуального восприятия.
 
-  * Используйте 4 пробела для отступа. Данный размер отступа является наиболее распространенным, требуется на курсе C++, поэтому используйте его всюду для единообразия. 4 пробела также является оптимальным размером для отступа согласно [NASA](http://homepages.inf.ed.ac.uk/dts/pm/Papers/nasa-c-style.pdf).
+  * Используйте 4 пробела для отступа. Данный размер отступа является наиболее распространенным, требуется на курсе C++, поэтому используйте его всюду для единообразия. 4 пробела также является оптимальным размером для отступа согласно [NASA](https://ntrs.nasa.gov/citations/19950022400).
   * Вокруг всех бинарных операторов (`=, ==, +, -, *, /, >, <<` и др.) должны быть пробелы с обеих сторон. Исключением являются операторы `., ->, ::`.
   * После запятой должен быть пробел. 
   * Между закрывающейся круглой скобкой и открывающейся фигурной должен быть пробел.
@@ -516,7 +515,7 @@ _**Это самое большое возможное зло**_. Если в п
     Нам не придется создавать специальные базы данных для тестирования с подмененными данными, мы сможем генерировать эти данные прямо в памяти, в огромных количествах, сможем выполнить хоть 100000 тестов, если каждый из них выполняется быстро. С базами данных это не получится, потому что, во-первых, один тест, обращающийся в процессе к базе данных, уже в любом случае будет занимать существенное время, а во-вторых потому что не получится создать 100000
     различных таблиц.
 
-      Более подробное описание, примеры и другие советы для написания хорошо тестируемых классов см. [здесь](http://misko.hevery.com/attachments/Guide-Writing%20Testable%20Code.pdf).
+      Более подробное описание, примеры и другие советы для написания хорошо тестируемых классов см. [здесь](https://github.com/jptiancai/Guide-Writing-Testable-Code).
 
 
 <p align="center">
